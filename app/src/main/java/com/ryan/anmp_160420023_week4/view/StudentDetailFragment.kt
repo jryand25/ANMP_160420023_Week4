@@ -34,7 +34,7 @@ class StudentDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var id = 0
+        var id = ""
         if(arguments != null){
             id = StudentDetailFragmentArgs.fromBundle(requireArguments()).id
         }
