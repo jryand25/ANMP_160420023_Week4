@@ -4,11 +4,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.ryan.anmp_160420023_week4.R
 import com.ryan.anmp_160420023_week4.model.Student
+import com.ryan.anmp_160420023_week4.util.loadImage
 
 class StudentListAdapter(val studentList:ArrayList<Student>): RecyclerView.Adapter<StudentListAdapter.StudentViewHolder>() {
     class StudentViewHolder(var view: View): RecyclerView.ViewHolder(view)
@@ -25,9 +28,13 @@ class StudentListAdapter(val studentList:ArrayList<Student>): RecyclerView.Adapt
         holder.view.findViewById<TextView>(R.id.txtName).text = studentList[position].name
 
         holder.view.findViewById<TextView>(R.id.btnDetail).setOnClickListener {
-            val action = StudentListFragmentDirections.actionDetailStudent()
+            val action = StudentListFragmentDirections.actionDetailStudent(studentList[position].id.toString().toInt())
             Navigation.findNavController(it).navigate(action)
         }
+
+        var imageView = holder.view.findViewById<ImageView>(R.id.imageView)
+        var progressBar = holder.view.findViewById<ProgressBar>(R.id.progressBar2)
+        imageView.loadImage(studentList[position].photoUrl, progressBar)
 
 //        holder.view.txtID.text = studentList[position].id
 //        holder.view.txtName.text = studentList[position].name

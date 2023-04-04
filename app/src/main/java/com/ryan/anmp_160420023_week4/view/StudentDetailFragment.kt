@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.lifecycle.Observer
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.textfield.TextInputEditText
 import com.ryan.anmp_160420023_week4.R
+import com.ryan.anmp_160420023_week4.util.loadImage
 import com.ryan.anmp_160420023_week4.viewmodel.DetailViewModel
 import com.ryan.anmp_160420023_week4.viewmodel.ListViewModel
 
@@ -32,8 +34,12 @@ class StudentDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var id = 0
+        if(arguments != null){
+            id = StudentDetailFragmentArgs.fromBundle(requireArguments()).id
+        }
         viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
-        viewModel.fecth()
+        viewModel.fecth(id)
 
         observeViewModel(view)
     }
@@ -44,6 +50,7 @@ class StudentDetailFragment : Fragment() {
             view.findViewById<TextInputEditText>(R.id.txtName).setText(it.name)
             view.findViewById<TextInputEditText>(R.id.txtBod).setText(it.dob)
             view.findViewById<TextInputEditText>(R.id.txtPhone).setText(it.phone)
+            view.findViewById<ImageView>(R.id.imageView2).loadImage(it.photoUrl, view.findViewById<ProgressBar>(R.id.progressBar3))
         })
     }
 }
