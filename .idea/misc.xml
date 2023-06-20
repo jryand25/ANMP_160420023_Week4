@@ -4,9 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudio/ANMP/04/ANMP_160420023_Week4/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
-        <entry key="..\:/AndroidStudio/ANMP/04/ANMP_160420023_Week4/app/src/main/res/layout/fragment_student_detail.xml" value="0.37604166666666666" />
-        <entry key="..\:/AndroidStudio/ANMP/04/ANMP_160420023_Week4/app/src/main/res/layout/fragment_student_list.xml" value="0.25" />
-        <entry key="..\:/AndroidStudio/ANMP/04/ANMP_160420023_Week4/app/src/main/res/layout/student_list_item.xml" value="0.67" />
+        <entry key="..\:/AndroidStudio/ANMP/04/ANMP_160420023_Week4/app/src/main/res/layout/fragment_student_detail.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio/ANMP/04/ANMP_160420023_Week4/app/src/main/res/layout/fragment_student_list.xml" value="0.2074074074074074" />
+        <entry key="..\:/AndroidStudio/ANMP/04/ANMP_160420023_Week4/app/src/main/res/layout/student_list_item.xml" value="0.33" />
       </map>
     </option>
   </component>
